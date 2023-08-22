@@ -7,7 +7,7 @@
     <title>Chat App</title>
   </head>
   <body>
-    <h1 style="text-align: center">Chat App</h1>
+    <h1 style="text-align: center">📱 Simple Chat App</h1>
     <div
       style="
         min-height: 50dvh;
@@ -18,10 +18,18 @@
       id="chat"
     >
       <div>
-        <ul id="messages"></ul>
+        <ul id="messages">
+          <li>
+            Hi there! 👋 This is a demo chat app built using Node.js and
+            Websockets!
+          </li>
+          <li>
+            Write a message below to broadcast it to everyone else in the room!
+          </li>
+        </ul>
       </div>
       <form id="form" action="">
-        <input id="input" autocomplete="off" /><button>Send</button>
+        <input autofocus id="input" /><button>Send</button>
       </form>
     </div>
     <script src="/socket.io/socket.io.js"></script>
