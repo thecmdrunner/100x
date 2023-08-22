@@ -3,6 +3,7 @@ const socket = io();
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const messages = document.getElementById("messages");
+const chat = document.getElementById("chat");
 
 const emojis = {
     react: "⚛️",
@@ -32,6 +33,8 @@ const replaceWordsWithEmojis = (message) => {
     return newWords.join(" ");
 };
 
+const scrollToBottom = () => messages.scrollTo(0, messages.scrollHeight);
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = input?.value;
@@ -44,7 +47,8 @@ form.addEventListener("submit", (e) => {
 
     // Handle slash commands
     if (message in slashCommands) {
-        return slashCommands[message].execute();
+        slashCommands[message].execute();
+        return scrollToBottom();
     }
 
     // Handle regular message sent to server
@@ -55,6 +59,7 @@ socket.on("chat message", (msg) => {
     const listItem = document.createElement("li");
     listItem.textContent = msg;
     messages.appendChild(listItem);
+    return scrollToBottom();
 });
 
 const slashCommands = {
@@ -70,9 +75,9 @@ const slashCommands = {
         description: "List all slash commands",
         execute: () => {
             const helpMsg = `Available commands:
-${Object.keys(slashCommands).map(
-                (cmd) => `${cmd}: ${slashCommands[cmd].description}\n`
-            ).join("")}
+${Object.keys(slashCommands)
+                    .map((cmd) => `${cmd}: ${slashCommands[cmd].description}\n`)
+                    .join("")}
             `;
 
             return alert(helpMsg);
@@ -93,5 +98,3 @@ ${Object.keys(slashCommands).map(
         },
     },
 };
-
-
