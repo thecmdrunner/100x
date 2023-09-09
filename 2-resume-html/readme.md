@@ -1,4 +1,4 @@
-The production version is hosted at:
+The production version is hosted at: https://100x-resume-html.vercel.app/
 
 # Pure HTML Resume
 
