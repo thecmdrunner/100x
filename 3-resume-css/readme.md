@@ -1,5 +1,8 @@
-The production version is hosted at: https://100x-resume-html.vercel.app/
+The production versions are hosted at:
 
-# Pure HTML Resume
+- Regular CSS version: https://100x-resume-css.vercel.app/
+- Tailwind version: https://100x-resume-css.vercel.app/tailwind.html
 
-This is a simple resume that uses only HTML, and no CSS.
+# HTML Resume with styles
+
+This is a simple resume that uses vanilla CSS and Tailwind CSS to style the resume, in two separate versions.
