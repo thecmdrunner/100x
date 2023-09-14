@@ -16,12 +16,11 @@
 
           extend: {
             colors: {
-              "github-dark": "#0D1116",
+              "github-bg": "#0D1116",
+              "github-fg": "#161B21",
+              "github-fg-border": "#30363d",
             },
           },
-        },
-        corePlugins: {
-          // preflight: false,
         },
       };
     </script>
@@ -39,9 +38,9 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-github-dark p-5 selection:bg-gray-700 text-white">
+  <body class="bg-github-bg p-5 selection:bg-gray-700 text-white">
     <header
-      class="font-sans border border-[#30363d] bg-[#161B21] rounded-lg px-5 py-3 gap-3 justify-between flex flex-wrap"
+      class="font-sans border border-github-fg-border bg-github-fg rounded-lg px-5 py-3 gap-3 justify-between flex flex-wrap"
     >
       <h1
         class="font-serif font-bold text-5xl bg-gradient-to-tr from-amber-300 to-purple-500 bg-clip-text text-transparent selection:text-white"
@@ -140,13 +139,13 @@
     <hr class="rounded-full my-1.5 border-transparent" />
     <main class="font-sans">
       <article
-        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+        class="px-5 pt-3 pb-5 bg-github-fg border border-github-fg-border rounded-lg"
       >
         <h2 class="text-2xl font-bold leading-loose">Technical Skills</h2>
 
         <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
           <li class="">
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               Technologies to build Full Stack Applications:
             </h3>
 
@@ -286,7 +285,7 @@
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               Artificial Intelligence and ML:
             </h3>
 
@@ -321,7 +320,7 @@
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               Deployment and CI/CD:
             </h3>
 
@@ -377,9 +376,7 @@
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
-              Design Tools
-            </h3>
+            <h3 class="font-medium text-xl leading-relaxed">Design Tools</h3>
 
             <a
               class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
@@ -402,15 +399,15 @@
       <hr class="rounded-full my-1.5 border-transparent" />
 
       <article
-        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+        class="px-5 pt-3 pb-5 bg-github-fg border border-github-fg-border rounded-lg"
       >
         <h2 class="text-2xl font-bold leading-loose">Experience</h2>
 
         <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               <a
-                target="_blank"
+                class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight mb-3 border-dotted border-b"
                 rel="noopener noreferrer"
                 href="https://maxroom.co"
                 >Maxroom</a
@@ -427,8 +424,9 @@
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               <a
+                class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight mb-3 border-dotted border-b"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.remotion.dev"
@@ -437,6 +435,7 @@
             </h3>
             <b>
               <a
+                class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight mb-3 border-dotted border-b"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.remotion.dev/experts/"
@@ -453,8 +452,9 @@
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               <a
+                class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight mb-3 border-dotted border-b"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://swiftube.vercel.app/"
@@ -468,6 +468,7 @@
               <li>
                 Participated in
                 <a
+                  class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight border-dotted border-b"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://dev.to/devteam/announcing-the-github-dev-2023-hackathon-4ocn"
@@ -478,8 +479,9 @@
             </ul>
           </li>
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               <a
+                class="inline-block pr-1 hover:border-solid focus:border-solid active:border-solid leading-tight mb-3 border-dotted border-b"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.vasavgroup.com/"
@@ -499,22 +501,20 @@
       <hr class="rounded-full my-1.5 border-transparent" />
 
       <article
-        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+        class="px-5 pt-3 pb-5 bg-github-fg border border-github-fg-border rounded-lg"
       >
         <h2 class="text-2xl font-bold leading-loose">Education</h2>
 
         <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
+            <h3 class="font-medium text-xl leading-relaxed">
               Mechanical Engineering Diploma
             </h3>
             <p>Guru Gobind Singh Polytechnic - 2021</p>
           </li>
 
           <li>
-            <h3 class="font-medium underline text-xl leading-relaxed">
-              High School
-            </h3>
+            <h3 class="font-medium text-xl leading-relaxed">High School</h3>
             <p>R.J.E.M. High School - 2018</p>
           </li>
         </ol>
