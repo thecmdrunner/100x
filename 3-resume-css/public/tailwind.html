@@ -11,6 +11,13 @@
           fontFamily: {
             sans: ["DM Sans", "sans-serif"],
             serif: ["DM Sans", "serif"],
+            mono: ["Space Mono", "monospace"],
+          },
+
+          extend: {
+            colors: {
+              "github-dark": "#0D1116",
+            },
           },
         },
         corePlugins: {
@@ -25,13 +32,19 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-[#0D1116] p-5 selection:bg-orange-500 text-white">
+  <body class="bg-github-dark p-5 selection:bg-gray-700 text-white">
     <header
       class="font-sans border border-[#30363d] bg-[#161B21] rounded-lg px-5 py-3 gap-3 justify-between flex flex-wrap"
     >
       <h1
-        class="font-serif font-bold text-5xl bg-gradient-to-tr from-amber-300 to-purple-500 bg-clip-text text-transparent"
+        class="font-serif font-bold text-5xl bg-gradient-to-tr from-amber-300 to-purple-500 bg-clip-text text-transparent selection:text-white"
       >
         Pranav Kulkarni
       </h1>
@@ -124,121 +137,147 @@
         </a>
       </nav>
     </header>
-    <hr class="rounded-full my-3 border-gray-600" />
+    <hr class="rounded-full my-1.5 border-transparent" />
     <main class="font-sans">
-      <article>
-        <h2>Technical Skills</h2>
+      <article
+        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+      >
+        <h2 class="text-2xl font-bold leading-loose">Technical Skills</h2>
 
-        <ol>
-          <li>
-            <h3>Technologies to build Full Stack Applications:</h3>
+        <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
+          <li class="">
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              Technologies to build Full Stack Applications:
+            </h3>
 
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://nextjs.org/"
               >Next.js</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.typescriptlang.org/"
               >Typescript</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://nodejs.org/"
               >Node.js</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://react.dev/"
               >React</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://tailwindcss.com/"
               >Tailwind CSS</a
             >·
-            <a target="_blank" rel="noopener noreferrer" href="https://trpc.io/"
+            <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://trpc.io/"
               >tRPC</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="http://remotion.dev/"
               >Remotion</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://sass-lang.com/"
               >Scss/Sass</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://clerk.com/"
               >Clerk</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://auth0.com/"
               >Auth0</a
             >
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://supabase.com/"
               >Supabase</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.firebase.com/"
               >Firebase</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://planetscale.com/"
               >Planetscale</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.mysql.com/"
               >MySQL</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.postgresql.org/"
               >PostgreSQL</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://redis.io/"
               >Redis</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.mongodb.com/"
               >Mongo DB</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.prisma.io/"
               >Prisma ORM</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://orm.drizzle.team/"
@@ -247,27 +286,33 @@
           </li>
 
           <li>
-            <h3>Artificial Intelligence and ML:</h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              Artificial Intelligence and ML:
+            </h3>
 
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://openai.com/"
               >OpenAI</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://replicate.com/"
               >Replicate</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://elevenlabs.io/"
               >Elevenlabs</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/features/copilot"
@@ -276,39 +321,54 @@
           </li>
 
           <li>
-            <h3>Deployment and CI/CD:</h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              Deployment and CI/CD:
+            </h3>
 
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/"
               >GitHub Team Collaboration</a
             >·
-            <a target="_blank" rel="noopener noreferrer" href="vercel.com/"
+            <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="vercel.com/"
               >Vercel</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.netlify.com/"
               >Netlify</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://railway.app/"
               >Railway</a
             >·
-            <a target="_blank" rel="noopener noreferrer" href="render.com"
+            <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="render.com"
               >Render</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.docker.com/"
               >Docker</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.linode.com/"
@@ -317,15 +377,19 @@
           </li>
 
           <li>
-            <h3>Design Tools</h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              Design Tools
+            </h3>
 
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.figma.com/"
               >Figma</a
             >·
             <a
+              class="inline-block pr-1 hover:underline focus:underline active:underline font-mono leading-loose"
               target="_blank"
               rel="noopener noreferrer"
               href="https://excalidraw.com/"
@@ -335,14 +399,16 @@
         </ol>
       </article>
 
-      <hr class="rounded-full my-3 border-gray-600" />
+      <hr class="rounded-full my-1.5 border-transparent" />
 
-      <article>
-        <h2>Experience</h2>
+      <article
+        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+      >
+        <h2 class="text-2xl font-bold leading-loose">Experience</h2>
 
-        <ol>
+        <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
           <li>
-            <h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -351,7 +417,7 @@
               >
             </h3>
             <b>Full Stack AI Developer (2023)</b>
-            <ul>
+            <ul class="list-disc ml-4">
               <li>Integrated OpenAI and Replicate APIs.</li>
               <li>
                 Integrated various APIs - Text to speech, Image and video
@@ -361,7 +427,7 @@
           </li>
 
           <li>
-            <h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -379,7 +445,7 @@
               </a>
             </b>
 
-            <ul>
+            <ul class="list-disc ml-4">
               <li>
                 Developed Text-to-Speech template for the launch of Remotion v4.
               </li>
@@ -387,7 +453,7 @@
           </li>
 
           <li>
-            <h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -397,7 +463,7 @@
             </h3>
             <b> Full Stack AI Developer (2023) </b>
 
-            <ul>
+            <ul class="list-disc ml-4">
               <li>Built a tool that makes videos using AI.</li>
               <li>
                 Participated in
@@ -412,7 +478,7 @@
             </ul>
           </li>
           <li>
-            <h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -422,7 +488,7 @@
             </h3>
             <b> Full Stack Web Developer (2023) </b>
 
-            <ul>
+            <ul class="list-disc ml-4">
               <li>Developed main marketing website.</li>
               <li>Worked on Admin Dashboard.</li>
             </ul>
@@ -430,25 +496,31 @@
         </ol>
       </article>
 
-      <hr class="rounded-full my-3 border-gray-600" />
+      <hr class="rounded-full my-1.5 border-transparent" />
 
-      <article>
-        <h2>Education</h2>
+      <article
+        class="px-5 pt-3 pb-5 bg-[#161B21] border border-[#30363d] rounded-lg"
+      >
+        <h2 class="text-2xl font-bold leading-loose">Education</h2>
 
-        <ol>
+        <ol class="sm:ml-6 space-y-6 list-none sm:list-decimal">
           <li>
-            <h3>Mechanical Engineering Diploma</h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              Mechanical Engineering Diploma
+            </h3>
             <p>Guru Gobind Singh Polytechnic - 2021</p>
           </li>
 
           <li>
-            <h3>High School</h3>
+            <h3 class="font-medium underline text-xl leading-relaxed">
+              High School
+            </h3>
             <p>R.J.E.M. High School - 2018</p>
           </li>
         </ol>
       </article>
     </main>
 
-    <hr class="rounded-full my-3 border-gray-600" />
+    <hr class="rounded-full my-1.5 border-transparent" />
   </body>
 </html>
