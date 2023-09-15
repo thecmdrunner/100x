@@ -150,7 +150,7 @@ article > h2 {
 article > ol {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-  list-style: decimal;
+  list-style: none;
 }
 
 ul > li {
@@ -205,5 +205,6 @@ article > ol > li > a:active {
 @media (min-width: 640px) {
   article > ol {
     margin-left: 1.5rem;
+    list-style: decimal;
   }
 }
