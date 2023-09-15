@@ -85,6 +85,7 @@
 
 ### Constraints:
 
+- User must be verified before writing a review.
 - User must have read the book before writing the review.
 - User can submit only one review per book.
 - User must be signed in to write a review.
@@ -97,8 +98,7 @@
 - email (unique)
 - image
 - join date
-- verification
-- TODO: pending,admin verified, OAuth verified, etc.
+- verification (pending ,admin verified, OAuth verified, etc.)
 - follower count
 - reviews written count
 
@@ -117,6 +117,7 @@
 
 ### Constraints:
 
+- User must be verified before opening a discussion topic.
 - User must be signed in to open a discussion topic.
 
 ## 8. Comment (To a Book Review, or an Answer)
@@ -129,6 +130,7 @@
 
 ### Constraints:
 
+- User must be verified before writing a comment.
 - User must be signed in to write a comment.
 
 ## 9. Question
@@ -148,6 +150,7 @@
 ### Constraints:
 
 - A question can only be related to a book.
+- User must be verified before asking a question.
 - User must be signed in to ask a question.
 
 ## 10. Answer
@@ -164,6 +167,7 @@
 
 - Obviously an answer can't exist without a question.
 - User must be signed in to answer a question.
+- User must be verified before answering a question.
 
 ## 11. Quote (From a Book)
 
@@ -473,3 +477,33 @@ A comment can only be written by one user.
 # Actions
 
 ## User
+
+A user can:
+
+1. Sign up, sign in and sign out.
+2. Add/Remove a book to their account.
+3. Add and edit a book review.
+4. Give a book rating.
+5. Add/Remove a book to their reading list.
+6. Add/Remove a book to their reading progress.
+7. Follow/Unfollow an author.
+8. Follow/Unfollow a user.
+9. Ask a question about a book.
+10. Answer a question.
+11. Open a discussion topic about a book.
+12. Comment on a discussion topic.
+13. Comment on a book review.
+14. Comment on an answer.
+15. Change their profile picture.
+16. Add a tag to a book.
+17. Add a tag to a quote.
+18. Add a tag to an author.
+
+## Author
+
+An author can:
+
+1. Sign up, sign in and sign out.
+2. List new books written by them.
+3. Create a new series.
+4. Add new books to an existing series.
