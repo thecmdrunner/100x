@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -534,6 +534,39 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.bg-\[\#040404\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 4 4 / var(--tw-bg-opacity));
+}
+
+.font-chirp {
+  font-family: Chirp, sans-serif;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -545,4 +578,44 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+/* Regular Weight */
+
+@font-face {
+  font-family: "Chirp";
+
+  src: url("../public/fonts/chirp-regular-web.woff2") format("woff2");
+
+  font-weight: 400;
+}
+
+/* Medium Weight */
+
+@font-face {
+  font-family: "Chirp";
+
+  src: url("./public/fonts/chirp-medium-web.woff2") format("woff2");
+
+  font-weight: 500;
+}
+
+/* Bold Weight */
+
+@font-face {
+  font-family: "Chirp";
+
+  src: url("./public/fonts/chirp-bold-web.woff2") format("woff2");
+
+  font-weight: 700;
+}
+
+/* Heavy Weight */
+
+@font-face {
+  font-family: "Chirp";
+
+  src: url("./public/fonts/chirp-heavy-web.woff2") format("woff2");
+
+  font-weight: 900;
 }
