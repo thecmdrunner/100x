@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="../dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,17 +12,37 @@
     />
   </head>
   <body>
-    <main class="bg-[#040404] font-inter text-white block h-screen w-full">
-      <h1 class="text-3xl font-bold underline">States to cover:</h1>
-      <ul class="flex flex-col gap-2">
+    <main class="bg-[#040404] font-inter text-white block h-screen w-full p-3">
+      <h1 class="text-3xl font-bold underline">States covered:</h1>
+      <ul class="flex flex-col gap-0.5 list-inside list-disc">
         <li>Default</li>
         <li>Hover</li>
         <li>Disabled</li>
         <li>Focus</li>
       </ul>
 
+      <hr class="my-8" />
+
       <div class="flex flex-col">
-        <button>Create account</button>
+        <!-- border-radius of `65px` is effectively full, so avoided adding redundant custom value. -->
+        <!-- backdrop-blur of `23.668209075927734px` ~ `24px` ~ `xl` :) -->
+        <!-- Kept the button width responsive, and applying a fixed width to its container, because that's probably how it will be used in prod :) -->
+
+        <!-- TODO: make this width into a custom value -->
+        <div class="w-[334px] grid gap-y-3">
+          <button
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-normal text-neutral-1000"
+          >
+            Create account
+          </button>
+
+          <button
+            disabled
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-normal text-neutral-1000"
+          >
+            Create account
+          </button>
+        </div>
       </div>
     </main>
   </body>
