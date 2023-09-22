@@ -563,8 +563,8 @@ video {
   background-color: rgb(4 4 4 / var(--tw-bg-opacity));
 }
 
-.font-chirp {
-  font-family: Chirp, sans-serif;
+.font-inter {
+  font-family: Inter, sans-serif;
 }
 
 .text-3xl {
