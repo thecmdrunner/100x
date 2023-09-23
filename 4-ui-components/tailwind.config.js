@@ -15,6 +15,7 @@ module.exports = {
         "twitter-blue-disabled": "#1E5D87",
         "blue-wash": "#75BEEF", // For modal bg, use with 20% opacity
         "button-stroke": "#546A7A",
+        "button-stroke-neutral": "rgba(29, 155, 240, 0.24)",
         "searchbar-fill": "#212327",
         "card-fill": "#16181C",
         success: "#00BE74",
