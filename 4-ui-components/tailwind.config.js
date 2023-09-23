@@ -21,6 +21,8 @@ module.exports = {
         success: "#00BE74",
         error: "#8B141A",
 
+        "desk-dark": "#040404",
+
         neutral: {
           50: "#F9F9F9",
           100: "#F4F4F4",
@@ -40,7 +42,8 @@ module.exports = {
       width: {
         // Naming things is hard okay...
         "almost-sm": "334px",
-        "almost-md": "442px",
+        "almost-md": "426px",
+        "almost-md-2": "442px",
       },
 
       lineHeight: {
