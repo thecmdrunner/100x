@@ -23,24 +23,118 @@
 
       <hr class="my-8" />
 
-      <div class="flex flex-col">
-        <!-- border-radius of `65px` is effectively full, so avoided adding redundant custom value. -->
-        <!-- backdrop-blur of `23.668209075927734px` ~ `24px` ~ `xl` :) -->
-        <!-- Kept the button width responsive, and applying a fixed width to its container, because that's probably how it will be used in prod :) -->
+      <!-- border-radius of `65px` is effectively full, so avoided adding a redundant custom value. -->
 
-        <!-- TODO: make this width into a custom value -->
-        <div class="w-[334px] grid gap-y-3">
+      <!-- backdrop-blur of `23.668209075927734px` ~ `24px` === `xl` :) -->
+
+      <!-- Kept the buttons' width responsive, and applied a fixed width to their containers, because that's probably how it will be used in prod :) -->
+
+      <div class="flex flex-wrap gap-3">
+        <div class="w-almost-sm flex-col flex gap-y-3">
           <button
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-normal text-neutral-1000"
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
           >
             Create account
           </button>
 
           <button
             disabled
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-normal text-neutral-1000"
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
           >
             Create account
+          </button>
+
+          <button
+            class="text-twitter-blue font-bold backdrop-blur-xl rounded-full py-2 px-6 shadow-neutral flex justify-center items-center gap-2.5 leading-regular border border-button-stroke"
+          >
+            Sign up
+          </button>
+        </div>
+
+        <div class="w-max flex-col flex gap-y-3">
+          <button
+            class="bg-neutral-50 backdrop-blur-xl text-sm focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-5 w-max inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
+          >
+            Follow
+          </button>
+
+          <button
+            disabled
+            class="bg-neutral-50 backdrop-blur-xl text-sm focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-5 w-max inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
+          >
+            Follow
+          </button>
+
+          <button
+            class="text-neutral-50 text-sm leading-regular inline-flex py-1.5 px-4 border rounded-full backdrop-blur-xl font-bold border-button-stroke shadow-neutral"
+          >
+            Following
+          </button>
+        </div>
+
+        <div class="w-almost-md flex-col flex gap-y-3">
+          <button
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-3 px-6 w-full inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
+          >
+            Next
+          </button>
+          <button
+            disabled
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-3 px-6 w-full inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+
+      <hr class="my-8" />
+
+      <div class="flex flex-wrap gap-3">
+        <div
+          class="w-max h-32 items-center justify-around flex-col flex gap-y-3"
+        >
+          <button
+            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed w-max items-center py-4 px-24 font-bold leading-regular"
+          >
+            Post
+          </button>
+          <button
+            disabled
+            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-4 px-24 font-bold leading-regular"
+          >
+            Post
+          </button>
+        </div>
+
+        <div
+          class="w-max h-32 items-center justify-around flex-col flex gap-y-3"
+        >
+          <button
+            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-3 px-6 font-bold leading-regular w-max"
+          >
+            Post
+          </button>
+
+          <button
+            disabled
+            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-3 px-6 font-bold leading-regular w-max"
+          >
+            Post
+          </button>
+        </div>
+        <div
+          class="w-almost-md h-32 items-center justify-around flex-col flex gap-y-3"
+        >
+          <button
+            class="bg-twitter-blue text-white rounded-full gap-2.5 flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-5 px-5 font-bold text- leading-regular w-full"
+          >
+            Post
+          </button>
+          <button
+            disabled
+            class="bg-twitter-blue text-white rounded-full gap-2.5 flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-5 px-5 font-bold text- leading-regular w-full"
+          >
+            Post
           </button>
         </div>
       </div>

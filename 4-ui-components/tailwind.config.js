@@ -11,6 +11,8 @@ module.exports = {
 
       colors: {
         "twitter-blue": "#1D9BF0",
+        "twitter-blue-hover": '#1871CA',
+        "twitter-blue-disabled": "#1E5D87",
         "blue-wash": "#75BEEF", // For modal bg, use with 20% opacity
         "button-stroke": "#546A7A",
         "searchbar-fill": "#212327",
@@ -34,13 +36,24 @@ module.exports = {
         },
       },
 
+      width: {
+        // Naming things is hard okay...
+        "almost-sm": "334px",
+        "almost-md": "442px",
+      },
+
       lineHeight: {
-        normal: "normal",
+        // Naming things is very hard...
+        regular: "normal",
       },
 
       gap: {
         2.5: "0.625rem",
       },
+
+      boxShadow: {
+        'neutral': '0px 8px 16px 0px rgba(0, 0, 0, 0.25)',
+      }
     },
   },
   plugins: [],
