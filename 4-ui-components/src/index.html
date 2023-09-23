@@ -11,8 +11,8 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <main class="bg-[#040404] font-inter text-white block w-full p-3">
+  <body class="bg-[#040404]">
+    <main class="font-inter text-white block w-full p-3">
       <h1 class="text-3xl font-bold underline">States covered:</h1>
       <ul class="flex flex-col gap-0.5 list-inside list-disc">
         <li>Default</li>
@@ -136,6 +136,51 @@
           >
             Post
           </button>
+        </div>
+      </div>
+
+      <hr class="my-8" />
+
+      <div
+        class="w-[598px] h-[58px] px-20 pt-5 border-b border-neutral-700 justify-center items-center gap-40 inline-flex"
+      >
+        <div
+          class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
+        >
+          <div
+            class="pb-3 border-b-2 border-twitter-blue justify-center items-center flex"
+          >
+            <div class="text-neutral-400 text-base font-medium">For you</div>
+          </div>
+        </div>
+        <div
+          class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
+        >
+          <div
+            class="pb-3 border-b-2 border-transparent justify-center items-center flex"
+          >
+            <div class="text-neutral-50 text-base font-medium">Following</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap">
+        <div class="flex flex-col items-start justify-center gap-y-3 p-3">
+          <img class="cursor-pointer" src="../public/images/home-active.svg" />
+          <img
+            class="cursor-pointer"
+            src="../public/images/home-inactive.svg"
+          />
+        </div>
+        <div class="flex flex-col items-start justify-center gap-y-3 p-3">
+          <img
+            class="cursor-pointer"
+            src="../public/images/profile-active.svg"
+          />
+          <img
+            class="cursor-pointer"
+            src="../public/images/profile-inactive.svg"
+          />
         </div>
       </div>
     </main>
