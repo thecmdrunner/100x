@@ -44,15 +44,16 @@
 
       <div class="flex flex-wrap gap-3">
         <div class="flex-col flex gap-y-3 w-almost-md">
-          <div class="relative h-10 w-full">
+          <div class="relative flex w-full">
             <input
-              class="peer gap-2.5 items-center flex h-full w-full rounded border border-neutral-500 border- bg-transparent px-3 py-4 font-sans text-sm font-normal text-neutral-50 focus:text-neutral-50 active:text-neutral-50 outline outline-0 transition-all focus:border-twitter-blue justify-between placeholder:text-neutral-500"
-              placeholder="label"
+              class="peer gap-2.5 items-center flex h-full w-full rounded border border-neutral-500 border- bg-transparent px-3 py-4 font-normal leading-normal text-neutral-50 focus:text-neutral-50 active:text-neutral-50 text-xl outline outline-0 transition-all focus:border-twitter-blue justify-between placeholder:text-neutral-500"
+              placeholder="placeholder"
+              maxlength="10"
             />
             <label
-              class="pointer-events-none absolute left-4 -top-1.5 flex h-max bg-desk-dark w-max w- rounded select-none text-[11px] font-normal leading-tight text-neutral-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-0.5 after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-0.5 after:flex-grow peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-twitter-blue peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-neutral-500"
+              class="pointer-events-none absolute left-4 -top-2 flex h-max bg-desk-dark w-12 text-xs px-1 leading-normal items-center justify-center rounded select-none text-[11px] font-medium text-neutral-500 transition-all peer-focus:text-twitter-blue peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-neutral-500"
             >
-              Required
+              <p class="text-center">Label</p>
             </label>
           </div>
         </div>
