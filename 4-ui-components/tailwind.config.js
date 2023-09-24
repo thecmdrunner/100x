@@ -49,6 +49,8 @@ module.exports = {
         "almost-md": "426px",
         "almost-md-2": "434px",
         "almost-md-3": "442px",
+
+        lg: '512px',
       },
 
       lineHeight: {
