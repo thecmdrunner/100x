@@ -15,22 +15,22 @@
     <main tabindex="0" class="font-inter text-white block w-full p-3">
       <div class="flex py-4 gap-8 flex-wrap">
         <a href="https://thecmdrunner.github.io/100x/4-ui-components/src/">
-          <h1 class="text-3xl font-bold underline">Assignment 4.1</h1>
+          <h1 class="text-3xl font-bold underline">Buttons</h1>
         </a>
         <a
           href="https://thecmdrunner.github.io/100x/4-ui-components/src/inputs.html"
         >
-          <h1 class="text-3xl font-bold underline">Assignment 4.2</h1>
+          <h1 class="text-3xl font-bold underline">Inputs</h1>
         </a>
         <a
           href="https://thecmdrunner.github.io/100x/4-ui-components/src/cards.html"
         >
-          <h1 class="text-3xl font-bold underline">Assignment 4.3</h1>
+          <h1 class="text-3xl font-bold underline">Cards</h1>
         </a>
         <a
           href="https://thecmdrunner.github.io/100x/4-ui-components/src/posts.html"
         >
-          <h1 class="text-3xl font-bold underline">Assignment 4.4</h1>
+          <h1 class="text-3xl font-bold underline">Posts</h1>
         </a>
       </div>
 
@@ -157,7 +157,7 @@
       <div
         class="w-[598px] h-[58px] px-20 pt-5 border-b border-neutral-700 justify-center items-center gap-40 inline-flex"
       >
-        <div
+        <button
           class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
         >
           <div
@@ -165,8 +165,8 @@
           >
             <div class="text-neutral-400 text-base font-medium">For you</div>
           </div>
-        </div>
-        <div
+        </button>
+        <button
           class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
         >
           <div
@@ -174,26 +174,37 @@
           >
             <div class="text-neutral-50 text-base font-medium">Following</div>
           </div>
-        </div>
+        </button>
       </div>
 
       <div class="flex flex-wrap">
         <div class="flex flex-col items-start justify-center gap-y-3 p-3">
-          <img class="cursor-pointer" src="../public/images/home-active.svg" />
-          <img
-            class="cursor-pointer"
-            src="../public/images/home-inactive.svg"
-          />
+          <button class="aspect-square bg-transparent rounded-full p-1">
+            <img
+              class="cursor-pointer"
+              src="../public/images/home-active.svg"
+            />
+          </button>
+          <button class="aspect-square bg-transparent rounded-full p-1">
+            <img
+              class="cursor-pointer"
+              src="../public/images/home-inactive.svg"
+            />
+          </button>
         </div>
         <div class="flex flex-col items-start justify-center gap-y-3 p-3">
-          <img
-            class="cursor-pointer"
-            src="../public/images/profile-active.svg"
-          />
-          <img
-            class="cursor-pointer"
-            src="../public/images/profile-inactive.svg"
-          />
+          <button class="aspect-square bg-transparent rounded-full p-1">
+            <img
+              class="cursor-pointer"
+              src="../public/images/profile-active.svg"
+            />
+          </button>
+          <button class="aspect-square bg-transparent rounded-full p-1">
+            <img
+              class="cursor-pointer"
+              src="../public/images/profile-inactive.svg"
+            />
+          </button>
         </div>
       </div>
     </main>
