@@ -43,10 +43,11 @@ module.exports = {
       },
 
       width: {
-        // Naming things is hard okay...
+        // Naming things is hard...
         "almost-sm": "334px",
         "almost-md": "426px",
-        "almost-md-2": "442px",
+        "almost-md-2": "434px",
+        "almost-md-3": "442px",
       },
 
       lineHeight: {

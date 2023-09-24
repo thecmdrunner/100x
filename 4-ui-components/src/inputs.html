@@ -43,45 +43,36 @@
       <!-- Kept the buttons' width responsive, and applied a fixed width to their containers, because that's probably how it will be used in prod :) -->
 
       <div class="flex flex-wrap gap-3">
-        <div class="flex-col flex gap-y-3 w-almost-md">
-          <div
-            class="flex focus-within:border-twitter-blue rounded border border-neutral-500 py-4 px-3 relative w-full"
+        <div
+          class="flex items-center justify-between focus-within:border-twitter-blue rounded border border-neutral-500 py-4 px-3 relative w-almost-md"
+        >
+          <input
+            class="bg-transparent peer focus:outline-none grow"
+            placeholder="placeholder"
+          />
+          <label
+            class="absolute peer-focus:text-twitter-blue text-neutral-500 font-medium left-4 -top-2 text-xs px-1 leading-regular bg-desk-dark pointer-events-none"
           >
-            <input
-              class="bg-transparent peer focus:outline-none grow"
-              placeholder="placeholder"
-            />
-            <label
-              class="absolute peer-focus:text-twitter-blue text-neutral-500 font-medium left-4 -top-2 text-xs px-1 leading-normal bg-desk-dark pointer-events-none"
-            >
-              <p class="text-center">Label</p>
-            </label>
-            <img
-              class="peer-focus:opacity-100 opacity-0"
-              src="../public/images/correct.svg"
-            />
-          </div>
+            <p class="text-center">Label</p>
+          </label>
+          <img
+            class="peer-focus:opacity-100 opacity-0"
+            src="../public/images/correct.svg"
+          />
         </div>
 
-        <!-- OLD -->
-
-        <!-- <div class="flex-col flex gap-y-3 w-almost-md">
-          <div class="relative flex w-full">
-            <input
-              class="peer gap-2.5 items-center flex h-full w-full rounded border border-neutral-500 bg-transparent px-3 py-4 font-normal leading-normal text-neutral-50 focus:text-neutral-50 active:text-neutral-50 text-xl outline outline-0 transition-all focus:border-twitter-blue justify-between placeholder:text-neutral-500"
-              placeholder="placeholder"
-              maxlength="10"
-            />
-            <label
-              class="pointer-events-none absolute left-4 -top-2 flex h-max bg-desk-dark w-12 text-xs px-1 leading-normal items-center justify-center rounded select-none text-[11px] font-medium text-neutral-500 transition-all peer-focus:text-twitter-blue peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-neutral-500"
-            >
-              <p class="text-center">Label</p>
-            </label>
-          </div>
-        </div> -->
+        <div class="flex gap-3 items-start w-almost-md-2">
+          <img
+            class="w-9 h-9 aspect-square"
+            src="../public/images/user-avatar.jpg"
+          />
+          <input
+            class="bg-transparent caret-twitter-blue text-neutral-50 text-xl font-normal leading-regular h-9 focus:outline-none grow"
+            value="Don't wish for it, work for it."
+            placeholder="What's happening?!"
+          />
+        </div>
       </div>
-
-      <hr class="my-8" />
     </main>
   </body>
 </html>
