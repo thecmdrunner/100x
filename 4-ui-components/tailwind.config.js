@@ -51,6 +51,7 @@ module.exports = {
         "almost-md-3": "442px",
 
         lg: '512px',
+        'post-xl': '598px'
       },
 
       lineHeight: {
