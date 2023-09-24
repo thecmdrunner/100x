@@ -42,7 +42,7 @@
 
       <!-- Kept the buttons' width responsive, and applied a fixed width to their containers, because that's probably how it will be used in prod :) -->
 
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap gap-10">
         <div
           class="flex items-center justify-between focus-within:border-twitter-blue rounded border border-neutral-500 py-4 px-3 relative w-almost-md"
         >
@@ -70,6 +70,26 @@
             class="bg-transparent caret-twitter-blue text-neutral-50 text-xl font-normal leading-regular h-9 focus:outline-none grow"
             value="Don't wish for it, work for it."
             placeholder="What's happening?!"
+          />
+        </div>
+
+        <div
+          class="group px-4 rounded-full gap-[15px] flex items-center border border-1 focus-within:border-twitter-blue border-transparent bg-searchbar-fill py-2.5"
+        >
+          <img
+            class="group-focus-within:hidden inline-block"
+            src="../public/images/search-inactive.svg"
+          />
+
+          <img
+            class="group-focus-within:inline-block hidden"
+            src="../public/images/search-active.svg"
+          />
+
+          <input
+            type="text"
+            class="text-base placeholder:text-neutral-600 text-neutral-50 font-normal leading-regular focus:outline-none grow bg-transparent"
+            placeholder="Search"
           />
         </div>
       </div>

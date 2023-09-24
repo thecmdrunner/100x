@@ -45,6 +45,7 @@ module.exports = {
       width: {
         // Naming things is hard...
         "almost-sm": "334px",
+        "almost-sm-2": "348px",
         "almost-md": "426px",
         "almost-md-2": "434px",
         "almost-md-3": "442px",
