@@ -36,164 +36,57 @@
 
       <br class="select-none" />
 
-      <!-- border-radius of `65px` is effectively full, so avoided adding a redundant custom value. -->
+      <div class="flex px-4 py-2 gap-4">
+        <img
+          src="https://avatars.githubusercontent.com/u/38887390?v=4"
+          alt="profile pic"
+          class="aspect-square w-12 h-12 rounded-full"
+        />
 
-      <!-- backdrop-blur of `23.668209075927734px` ~ `24px` === `xl` :) -->
-
-      <!-- Kept the buttons' width responsive, and applied a fixed width to their containers, because that's probably how it will be used in prod :) -->
-
-      <div class="flex flex-wrap gap-3">
-        <div class="w-almost-sm flex-col flex gap-y-3">
-          <button
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Create account
-          </button>
-
-          <button
-            disabled
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Create account
-          </button>
-
-          <button
-            class="text-twitter-blue font-bold backdrop-blur-xl rounded-full py-2 px-6 shadow-neutral flex justify-center items-center gap-2.5 leading-regular border border-button-stroke-neutral"
-          >
-            Sign up
-          </button>
-        </div>
-
-        <div class="w-max flex-col flex gap-y-3">
-          <button
-            class="bg-neutral-50 backdrop-blur-xl text-sm focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-5 w-max inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Follow
-          </button>
-
-          <button
-            disabled
-            class="bg-neutral-50 backdrop-blur-xl text-sm focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-5 w-max inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Follow
-          </button>
-
-          <button
-            class="text-neutral-50 text-sm leading-regular inline-flex py-1.5 px-4 border rounded-full backdrop-blur-xl font-bold border-button-stroke-neutral shadow-neutral"
-          >
-            Following
-          </button>
-        </div>
-
-        <div class="w-almost-md flex-col flex gap-y-3">
-          <button
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-3 px-6 w-full inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Next
-          </button>
-          <button
-            disabled
-            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-3 px-6 w-full inline-flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
-          >
-            Next
-          </button>
-        </div>
-      </div>
-
-      <hr class="my-8" />
-
-      <div class="flex flex-wrap gap-3">
-        <div
-          class="w-max h-32 items-center justify-around flex-col flex gap-y-3"
-        >
-          <button
-            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed w-max items-center py-4 px-24 font-bold leading-regular"
-          >
-            Post
-          </button>
-          <button
-            disabled
-            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-4 px-24 font-bold leading-regular"
-          >
-            Post
-          </button>
-        </div>
-
-        <div
-          class="w-max h-32 items-center justify-around flex-col flex gap-y-3"
-        >
-          <button
-            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-3 px-6 font-bold leading-regular w-max"
-          >
-            Post
-          </button>
-
-          <button
-            disabled
-            class="bg-twitter-blue text-neutral-50 rounded-full gap-2.5 inline-flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-3 px-6 font-bold leading-regular w-max"
-          >
-            Post
-          </button>
-        </div>
-        <div
-          class="w-almost-md h-32 items-center justify-around flex-col flex gap-y-3"
-        >
-          <button
-            class="bg-twitter-blue text-white rounded-full gap-2.5 flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-5 px-5 font-bold text- leading-regular w-full"
-          >
-            Post
-          </button>
-          <button
-            disabled
-            class="bg-twitter-blue text-white rounded-full gap-2.5 flex justify-center hover:bg-twitter-blue-hover disabled:bg-twitter-blue-disabled disabled:cursor-not-allowed items-center py-5 px-5 font-bold text- leading-regular w-full"
-          >
-            Post
-          </button>
-        </div>
-      </div>
-
-      <hr class="my-8" />
-
-      <div
-        class="w-[598px] h-[58px] px-20 pt-5 border-b border-neutral-700 justify-center items-center gap-40 inline-flex"
-      >
-        <div
-          class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
-        >
-          <div
-            class="pb-3 border-b-2 border-twitter-blue justify-center items-center flex"
-          >
-            <div class="text-neutral-400 text-base font-medium">For you</div>
+        <div class="flex flex-col gap-y-1 text-neutral-50">
+          <div class="flex items-center gap-2">
+            <p class="text-base leading-regular font-medium">Pranav ⚡</p>
+            <p class="text-neutral-500">@thecmdrunner • 10h</p>
           </div>
-        </div>
-        <div
-          class="flex-col cursor-pointer w-32 justify-center items-center gap-4 inline-flex"
-        >
-          <div
-            class="pb-3 border-b-2 border-transparent justify-center items-center flex"
-          >
-            <div class="text-neutral-50 text-base font-medium">Following</div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flex flex-wrap">
-        <div class="flex flex-col items-start justify-center gap-y-3 p-3">
-          <img class="cursor-pointer" src="../public/images/home-active.svg" />
-          <img
-            class="cursor-pointer"
-            src="../public/images/home-inactive.svg"
-          />
-        </div>
-        <div class="flex flex-col items-start justify-center gap-y-3 p-3">
-          <img
-            class="cursor-pointer"
-            src="../public/images/profile-active.svg"
-          />
-          <img
-            class="cursor-pointer"
-            src="../public/images/profile-inactive.svg"
-          />
+          <p class="font-normal leading-regular">
+            Writing gets easier after the first sentence.
+
+            <br />
+            <br />
+
+            Lifting gets easier after the first set.
+
+            <br />
+            <br />
+
+            People think and think and think until they finally decide to act.
+            Their attention shifts from internal to external, and the difficulty
+            they created in their mind vanishes.
+          </p>
+
+          <div
+            class="flex justify-between py-3 self-stretch items-center text-neutral-500"
+          >
+            <button class="flex items-center justify-center gap-[5px]">
+              <img src="../public/images/comment-sv.svg" /> 11
+            </button>
+
+            <button class="flex items-center justify-center gap-[5px]">
+              <img src="../public/images/retweet-sv.svg" /> 270
+            </button>
+
+            <button class="flex items-center justify-center gap-[5px]">
+              <img src="../public/images/heart-sv.svg" /> 1,869
+            </button>
+
+            <button class="flex items-center justify-center gap-[5px]">
+              <img src="../public/images/reach-sv.svg" /> 99.6K
+            </button>
+            <button class="flex items-center justify-center gap-[5px]">
+              <img src="../public/images/share-sv.svg" />
+            </button>
+          </div>
         </div>
       </div>
     </main>

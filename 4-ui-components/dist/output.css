@@ -607,6 +607,10 @@ video {
   height: 223px;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -646,6 +650,10 @@ video {
 
 .w-lg {
   width: 512px;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .grow {
@@ -726,12 +734,24 @@ video {
   gap: 1.25rem;
 }
 
+.gap-\[5px\] {
+  gap: 5px;
+}
+
 .gap-y-3 {
   row-gap: 0.75rem;
 }
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-y-1 {
+  row-gap: 0.25rem;
+}
+
+.self-stretch {
+  align-self: stretch;
 }
 
 .rounded {
