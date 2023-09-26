@@ -11,7 +11,7 @@ module.exports = {
 
       colors: {
         "twitter-blue": "#1D9BF0",
-        "twitter-blue-hover": '#1871CA',
+        "twitter-blue-hover": "#1871CA",
         "twitter-blue-disabled": "#1E5D87",
 
         /**
@@ -50,8 +50,11 @@ module.exports = {
         "almost-md-2": "434px",
         "almost-md-3": "442px",
 
-        lg: '512px',
-        'post-xl': '598px'
+        "logo-1": "137px",
+        "logo-2": "455px",
+
+        lg: "512px",
+        "post-xl": "598px",
       },
 
       lineHeight: {
@@ -64,8 +67,12 @@ module.exports = {
       },
 
       boxShadow: {
-        'neutral': '0px 8px 16px 0px rgba(0, 0, 0, 0.25)',
-      }
+        neutral: "0px 8px 16px 0px rgba(0, 0, 0, 0.25)",
+      },
+
+      fontSize: {
+        "2.1xl": "26px",
+      },
     },
   },
   plugins: [],

@@ -12,12 +12,52 @@
     />
   </head>
   <body class="bg-desk-dark">
-    <main class="font-inter text-white block w-full p-3">
-      <!-- border-radius of `65px` is effectively full, so avoided adding a redundant custom value. -->
+    <main
+      class="flex w-full h-screen sm:items-center items-start justify-center"
+    >
+      <section
+        class="font-inter text-neutral-50 flex items-center gap-[6.25rem] justify-center"
+      >
+        <div class="flex items-end gap-0.5 justify-center">
+          <imgclass
+            ="fill-neutral-50 w-logo-2"
+            src="../public/images/100.svg"
+          />
 
-      <!-- backdrop-blur of `23.668209075927734px` ~ `24px` === `xl` :) -->
+          <img class="fill-neutral-50 w-logo-1" src="../public/images/x.svg" />
+        </div>
 
-      <!-- Kept the buttons' width responsive, and applied a fixed width to their containers, because that's probably how it will be used in prod :) -->
+        <div class="px-7 flex-col flex gap-y-10">
+          <div class="flex flex-col gap-y-3">
+            <h1 class="text-5xl leading-regular font-bold">Happening now</h1>
+            <h2 class="text-2.1xl leading-regular font-bold">Join today.</h2>
+          </div>
+
+          <button
+            class="bg-neutral-50 backdrop-blur-xl focus:bg-neutral-200 disabled:opacity-50 disabled:hover:bg-neutral-50 disabled:cursor-not-allowed hover:bg-neutral-200 rounded-full py-2 px-6 w-full flex justify-center items-center gap-2.5 font-bold leading-regular text-neutral-1000 shadow-neutral"
+          >
+            Create account
+          </button>
+
+          <div class="flex items-center justify-center gap-1 self-stretch">
+            <hr class="w-full border-neutral-700" />
+            <span class="text-center text-base leading-regular"> or </span>
+            <hr class="w-full border-neutral-700" />
+          </div>
+
+          <div class="flex flex-col gap-y-5">
+            <h3 class="font-medium text-xl leading-regular">
+              Already have an account?
+            </h3>
+
+            <button
+              class="text-twitter-blue font-bold backdrop-blur-xl rounded-full py-2 px-6 shadow-neutral flex justify-center items-center gap-2.5 leading-regular border border-button-stroke"
+            >
+              Sign up
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
