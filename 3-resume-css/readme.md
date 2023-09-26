@@ -1,7 +1,7 @@
 The production versions are hosted at:
 
 - Regular CSS version: https://100x-resume-css.vercel.app/
-- Tailwind version: https://100x-resume-css.vercel.app/tailwind.html
+- Tailwind version (Responsive): https://100x-resume-css.vercel.app/tailwind.html
 
 # HTML Resume with styles
 
