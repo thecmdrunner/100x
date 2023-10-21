@@ -66,9 +66,7 @@ const submitResponse = async (URL, body) => {
 
 const main = async () => {
     const { words, assignmentId } = await getMarketingJargon(URL);
-
     const wordsWithFrequency = getFrequencyOfWords(words);
-
     const mostFrequentWord = getMostFrequentWord(wordsWithFrequency);
 
     const body = {
