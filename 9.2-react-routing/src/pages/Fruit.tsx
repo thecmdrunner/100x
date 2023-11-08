@@ -41,11 +41,13 @@ function Fruit() {
         <h2 className="text-4xl text-center p-20">
           {fruit ? (
             <>
-              This page is for Fruit [{fruit}] - with ID: {fruitId}
+              This is the page for
+              <span className="font-bold px-2 underline">{fruit}</span>- with
+              ID: {fruitId}
             </>
           ) : (
             <div>
-              <p>Fruit with ID {fruitId} does not exist</p>
+              <p>[{fruitId}] Not Found! </p>
 
               <button
                 className="bg-gradient-to-tr text-sm from-cyan-700 to-emerald-500 text-white px-3 py-2 rounded-full"
