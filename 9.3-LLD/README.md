@@ -119,11 +119,11 @@ When the function is invoked, we set the loading state to true.
 
 Regardless of what the outcome is, success or error, we set the loading state to false.
 
-We can also extend this function by passing optional onSuccess and onError callbacks, to show a custom toast message to the user, instead of an alert() for a better UX.
+We can also extend this function by passing optional onSuccess and onError callbacks, to show a custom toast message to the user, instead of an `alert()` for a better UX.
 
 As for showing the loading state in the UI, we can subscribe to the isLoading state to programatically show changes in the UI.
 
-Here's an example of the ComposeTweet Component:
+Here's a simple example of the Compose Tweet Component:
 
 ```tsx
 function ComposeTweet() {
@@ -175,4 +175,8 @@ function ComposeTweet() {
 
 Of course, there are other ways to tackle this problem, and this is only a basic example.
 
-Typically, you'd also include client side validation (for example, 280 character limit) and automatic retries for devices with shotty internet.
+Typically, you'd also include:
+
+- Caching when querying data from the server.
+- Client side validation when mutating data - for example, 280 character limit.
+- Automatic retries for devices with shotty internet.
