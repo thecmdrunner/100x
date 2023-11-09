@@ -90,5 +90,89 @@
 
 ## E. **Error Handling and User Feedback**:
 
-<!-- Design a user-friendly error handling strategy to display error messages and other feedback to users. -->
-<!-- Implement loading states to give users feedback when data is being fetched. -->
+Loading states are tricky, but essential to have a good UX.
+
+Since we are using the web standard fetch API to get the data from our server, we can wrap the fetch call in an asynchronous function that updates the loading states for us.
+
+```tsx
+const getData = async ({ URL }) => {
+  setIsLoading(true);
+
+  try {
+    const res = await fetch(URL);
+    if (!res.ok) {
+      throw new Error("Couldn't fetch data!");
+    }
+
+    return await res.json();
+  } catch (err) {
+    alert(err?.message ?? "Something went wrong!");
+  } finally {
+    setIsLoading(false);
+  }
+};
+```
+
+The `getData` function returns a promise for parsing the response to JSON only when we are sure that the response status was in the range of 200 (`res.ok` is a shorthand alias just for this, built into the fetch API).
+
+When the function is invoked, we set the loading state to true.
+
+Regardless of what the outcome is, success or error, we set the loading state to false.
+
+We can also extend this function by passing optional onSuccess and onError callbacks, to show a custom toast message to the user, instead of an alert() for a better UX.
+
+As for showing the loading state in the UI, we can subscribe to the isLoading state to programatically show changes in the UI.
+
+Here's an example of the ComposeTweet Component:
+
+```tsx
+function ComposeTweet() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [tweetContent, setTweetContent] = useState("");
+
+  const handlePostTweet = async () => {
+    setIsLoading(true);
+
+    try {
+      const res = await fetch(BACKEND_URL + "/api/tweet", {
+        method: "POST",
+        body: JSON.stringify({ content: tweetContent }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+
+      setTweetContent("");
+      alert("Tweet posted successfully!");
+    } catch (err) {
+      alert(err?.message ?? "Could not post tweet!");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handlePostTweet();
+      }}
+    >
+      <input
+        type="text"
+        value={tweetContent}
+        onChange={(e) => setTweetContent(e.target.value)}
+      />
+
+      <button>{isLoading ? "Posting..." : "Post"}</button>
+    </form>
+  );
+}
+```
+
+Of course, there are other ways to tackle this problem, and this is only a basic example.
+
+Typically, you'd also include client side validation (for example, 280 character limit) and automatic retries for devices with shotty internet.
