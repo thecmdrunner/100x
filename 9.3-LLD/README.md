@@ -180,3 +180,45 @@ Typically, you'd also include:
 - Caching when querying data from the server.
 - Client side validation when mutating data - for example, 280 character limit.
 - Automatic retries for devices with shotty internet.
+- Optimistic updates - updating the UI before the server responds with the updated data.
+
+  For example, when liking a post, we can update the UI to show that the post has been liked, and then send the request to the server. If the request fails, we can revert the UI back to its original state.
+
+## F. **Optimization**
+
+Since we're using Vite, we can leverage some features that will result in a smaller initial JS bundle size that gets sent to the user:
+
+- Lazy Loading: We can defer loading of components that are not immediately going to be seen by the user, and hence are not to be prioritized. For example, the `<ProfileHeader>` component can be lazyily imported in our code, and it will be loaded at the point when the user visits the `/profile` page. This reduces initial load time and saves bandwidth for unseen content.
+
+```tsx
+import React, { lazy, Suspense } from "react";
+
+const ProfileHeader = lazy(() => import("./ProfileHeader"));
+
+function ProfilePage() {
+  return (
+    <>
+      {/* Wrap the lazy component within a Suspense, which is the React 18 way! */}
+      <Suspense fallback={<div className="h-full w-full grow">Loading...</div>}>
+        <ProfileHeader />
+      </Suspense>
+
+      {userTweets.map((tweet) => (
+        <Tweet key={tweet.id} tweet={tweet} />
+      ))}
+    </>
+  );
+}
+```
+
+- Since this platform will have a ton of images (user avatars, post images, etc.), we could use **Cloudinary** to optimize images on the cloud before serving them to the user. This will reduce the size of the images, and hence reduce the bandwidth required to load the images.
+
+- Code Splitting: We can split our UI Components and hooks into modular chunks, in order to make sure that only the code that is required for a particular page is imported.
+
+- Minification and Compression: We can use the new SWC compiler to minify our code, and use gzip compression to reduce the size of the bundle that is sent to the user. This is relatively new and is supported by Vite.
+
+- Switch to Next.js: We can switch to React Server Components available in Next.js, to reduce the size of the initial JS bundle even further. This is because RSCs are rendered on the server, and only the HTML is sent to the user, instead of the entire JS bundle. This has some added benefits:
+
+  - Faster Perceived Performance
+  - Better SEO
+  - No need to fetch data on the client side, since the data is sent from the server itself.
