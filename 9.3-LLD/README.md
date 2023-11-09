@@ -234,3 +234,7 @@ function ProfilePage() {
   - Faster Perceived Performance
   - Better SEO
   - No need to fetch data on the client side, since the data is sent from the server itself.
+
+## G. **Style Guide and Coding Conventions**
+
+1.
