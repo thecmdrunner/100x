@@ -211,13 +211,25 @@ function ProfilePage() {
 }
 ```
 
-- Since this platform will have a ton of images (user avatars, post images, etc.), we could use **Cloudinary** to optimize images on the cloud before serving them to the user. This will reduce the size of the images, and hence reduce the bandwidth required to load the images.
+> **_But how does this scale?_** 🤔
+>
+> Users have timelines with numerous posts and media, so lazy loading can be applied to components like individual posts, user profiles, or media elements, as this will help in adding infinite query where the user can scroll through the timeline and the posts will be loaded as the user scrolls.
 
-- Code Splitting: We can split our UI Components and hooks into modular chunks, in order to make sure that only the code that is required for a particular page is imported.
+- **Media Optimization:** Since platforms like Twitter will have a ton of images and videos (user avatars, post images, videos, etc.), we could use **Cloudinary** to optimize them on the cloud before serving them to the user. This will reduce the size of the media, and hence reduce the bandwidth required to load them.
 
-- Minification and Compression: We can use the new SWC compiler to minify our code, and use gzip compression to reduce the size of the bundle that is sent to the user. This is relatively new and is supported by Vite.
+> **_But how does this scale?_** 🤔
+>
+> If the user's device has to load 100 images, then optimizing and compressing each of those images will yeild a 100x (pun intended) performance gain!
 
-- Switch to Next.js: We can switch to React Server Components available in Next.js, to reduce the size of the initial JS bundle even further. This is because RSCs are rendered on the server, and only the HTML is sent to the user, instead of the entire JS bundle. This has some added benefits:
+- **Code Splitting:** We can split our UI Components and hooks into modular chunks, in order to make sure that only the code that is required for a particular page is imported.
+
+- **Minification and Compression:** We can use the new SWC compiler to minify our code, and use gzip compression to reduce the size of the bundle that is sent to the user. This is relatively new and is supported by Vite.
+
+- **Tree Shaking:** When we import a module, we may not use all of its exports. Tree shaking is the process of only including the code that is actually used, and removing the rest. This is done by the bundler, and is supported by Vite.
+
+- **Reduce dependencies:** This is pretty obvious, but worth mentioning. We can reduce the number of dependencies we use in our project, and switch to the newer primitives in javascript and browser, as they become available. For example, we can use the native `fetch` API instead of `axios`.
+
+- **Switch to Next.js:** We can switch to React Server Components available in Next.js, to reduce the size of the initial JS bundle even further. This is because RSCs are rendered on the server, and only the HTML is sent to the user, instead of the entire JS bundle. This has some added benefits:
 
   - Faster Perceived Performance
   - Better SEO
