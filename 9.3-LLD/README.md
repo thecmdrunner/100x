@@ -1,4 +1,4 @@
-# Low-Level Design for the Frontend of Microblogging Platform Twitter Clone (100x)
+# Low-Level Design for the Frontend of 100x Microblogging Platform
 
 ## A. Requirements
 
@@ -237,4 +237,27 @@ function ProfilePage() {
 
 ## G. **Style Guide and Coding Conventions**
 
-1.
+1. Style of code: Idiomatic code is more readable, where you follow the best
+    practices mentioned and naming conventions present in the docs.
+
+So for example, make sure you don't `import { log } from "console"`
+
+2. Comments: Write helpful comments, avoid writing this that are obvious and easily understood.
+
+Ideally, mention the **Why** you are doing something before the **What**.
+
+Comments are not just for you, they are also for anyone else wants to read that code and contribute.
+ 
+3. Disable direct commits to main branch. Instead, use PRs to merge code.
+
+This makes sure that the code you write will be reviewed by your peers, reducing the chances of bad commits making into the main branch.
+
+ 4. Push your commits in a branch, with no more than 12 files changed. This helps keep the PRs tightly scoped to one particular feature or bug fix, and makes it easy for the reviewer to go through your changes.
+
+ 5. Add rules that must be fulfilled for a merge to happen, like:
+
+- Pass builds on deployment platform (Vercel/Netlify)
+
+- Require approval of atleast one reviewer
+
+Following these set of guidelines will ensure that the team can implements features and fix bugs in a fast and safe manner, while keeping everyone aware of the changes happening in the codebase.
