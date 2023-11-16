@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config();
 
 if (
@@ -12,7 +12,7 @@ if (
     );
 }
 
-export default {
+module.exports = {
     development: {
         username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,

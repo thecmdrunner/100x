@@ -1,10 +1,7 @@
 "use strict";
-
-import user from "./user";
-
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Post extends Model {
+  class User extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Post.init(
+  User.init(
     {
       id: {
         type: DataTypes.BIGINT,
@@ -22,51 +19,65 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      content: {
-        type: DataTypes.STRING(280),
+      name: {
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
-      referenceId: {
-        type: DataTypes.BIGINT,
+      username: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+        unique: true,
+      },
+      email: {
+        type: DataTypes.STRING(120),
+        allowNull: false,
+        unique: true,
+      },
+      emailVerifiedAt: {
+        type: DataTypes.DATE,
         allowNull: true,
-        references: {
-          model: Post,
-          key: "id",
-        },
       },
-      userId: {
-        type: DataTypes.BIGINT,
+      passwordHash: {
+        type: DataTypes.STRING(512),
         allowNull: false,
-        references: {
-          model: user,
-          key: "id",
-        },
       },
-      type: {
-        type: DataTypes.ENUM,
+      bio: {
+        type: DataTypes.STRING(160),
         allowNull: false,
-        values: ["post", "repost", "reply"],
-        defaultValue: "post",
       },
-
+      location: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+      },
+      website: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+      },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
-      deletedAt: {
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
+      updatedAt: {
         type: DataTypes.DATE,
         allowNull: true,
       },
-      postedAt: {
+      dateOfBirth: {
         type: DataTypes.DATE,
-        allowNull: true,
+        allowNull: false,
       },
     },
     {
       sequelize,
-      modelName: "Post",
+      modelName: "User",
     }
   );
-  return Post;
+  return User;
 };
+
+

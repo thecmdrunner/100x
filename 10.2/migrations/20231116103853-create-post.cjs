@@ -1,19 +1,20 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Posts', {
+    await queryInterface.createTable('Post', {
       id: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DataTypes.BIGINT,
         allowNull: false,
         autoIncrement: true,
+        primaryKey: true,
       },
       content: {
-        type: Sequelize.STRING(280),
+        type: Sequelize.DataTypes.STRING(280),
         allowNull: false,
       },
       referenceId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DataTypes.BIGINT,
         allowNull: true,
         references: {
           model: "Post",
@@ -21,36 +22,36 @@ module.exports = {
         },
       },
       userId: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: user,
+          model: "User",
           key: "id",
         },
       },
       type: {
-        type: Sequelize.ENUM,
+        type: Sequelize.DataTypes.ENUM,
         allowNull: false,
         values: ["post", "repost", "reply"],
         defaultValue: "post",
       },
 
       createdAt: {
-        type: Sequelize.DATE,
+        type: Sequelize.DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.NOW,
+        defaultValue: Sequelize.DataTypes.NOW,
       },
       deletedAt: {
-        type: Sequelize.DATE,
+        type: Sequelize.DataTypes.DATE,
         allowNull: true,
       },
       postedAt: {
-        type: Sequelize.DATE,
+        type: Sequelize.DataTypes.DATE,
         allowNull: true,
       },
     },);
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Posts');
+    await queryInterface.dropTable('Post');
   }
 };

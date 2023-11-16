@@ -1,10 +1,13 @@
 "use strict";
 
-import user from "./user";
+// import post from "./post.cjs";
+// import user from "./user.cjs";
+const post = require("./post.cjs");
+const user = require("./user.cjs");
 
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Follow extends Model {
+  class Like extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Follow.init(
+  Like.init(
     {
       id: {
         type: DataTypes.BIGINT,
@@ -22,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      followerId: {
+      userId: {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
@@ -30,19 +33,19 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-      followingId: {
+      postId: {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: user,
+          model: post,
           key: "id",
         },
       },
     },
     {
       sequelize,
-      modelName: "Follow",
+      modelName: "Like",
     }
   );
-  return Follow;
+  return Like;
 };
