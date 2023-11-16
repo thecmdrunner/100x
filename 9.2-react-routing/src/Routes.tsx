@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
@@ -38,6 +38,17 @@ const router = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
+
+
+export function SomeRoute(props: {
+  name: string;
+  path: string;
+  readonly?: boolean
+}){
+
+  return <Route shouldRevalidate={true:} />
+
+}
 
 export default function App() {
   return (
