@@ -1,25 +1,36 @@
-require('dotenv').config();
+require("dotenv").config();
+
+if (
+    !process.env.DB_HOST ||
+    !process.env.DB_USERNAME ||
+    !process.env.DB_PASSWORD ||
+    !process.env.DB_NAME
+) {
+    throw new Error(
+        "Please set all DB environment variables in .env file!!!!!!!!!!!!!!!!!"
+    );
+}
 
 module.exports = {
     development: {
-        username: 'postgres',
+        username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
-        database: 'postgres',
-        host: 'db.kqjldcuhdzkedqtnjyxu.supabase.co',
-        dialect: 'postgres',
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: "postgres",
     },
     test: {
-        username: 'postgres',
+        username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
-        database: 'postgres',
-        host: 'db.kqjldcuhdzkedqtnjyxu.supabase.co',
-        dialect: 'postgres',
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: "postgres",
     },
     production: {
-        username: 'postgres',
+        username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
-        database: 'postgres',
-        host: 'db.kqjldcuhdzkedqtnjyxu.supabase.co',
-        dialect: 'postgres',
-    }
+        database: process.env.DB_NAME,
+        host: process.env.DB_HOST,
+        dialect: "postgres",
+    },
 };
