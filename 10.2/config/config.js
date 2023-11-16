@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 if (
     !process.env.DB_HOST ||
@@ -11,7 +12,7 @@ if (
     );
 }
 
-module.exports = {
+export default {
     development: {
         username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
