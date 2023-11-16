@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Post.init(
     {
       id: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       referenceId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: true,
         references: {
           model: Post,
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       userId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: user,

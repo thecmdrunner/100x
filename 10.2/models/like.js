@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
   Like.init(
     {
       id: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
       userId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: user,
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       postId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: post,

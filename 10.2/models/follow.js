@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
   Follow.init(
     {
       id: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
       followerId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: user,
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       followingId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
           model: user,

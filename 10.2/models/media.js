@@ -15,13 +15,13 @@ module.exports = (sequelize, DataTypes) => {
   Media.init(
     {
       id: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
       postId: {
-        type: DataTypes.BIGINT(15),
+        type: DataTypes.BIGINT,
         allowNull: true,
         references: {
           model: post,
