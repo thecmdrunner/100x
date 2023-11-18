@@ -1,9 +1,10 @@
 "use strict";
 
+import { Sequelize } from "sequelize";
 import UserModel from "./user";
 import { Model } from "sequelize-typescript";
 
-const PostModel = (sequelize: any, DataTypes: any): any => {
+const PostModel = (sequelize: Sequelize, DataTypes: any): any => {
   class Post extends Model {}
   Post.init(
     {

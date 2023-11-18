@@ -1,5 +1,4 @@
 import dotenv from "dotenv";
-import { Options } from "sequelize";
 dotenv.config();
 
 if (
@@ -13,10 +12,14 @@ if (
   );
 }
 
-export default {
+/** @type {Required<Pick<import("sequelize").Options, 'username' | 'password' | 'database' | 'dialect' | 'host'>>} */
+const config = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   host: process.env.DB_HOST,
   dialect: "postgres",
-} satisfies Options;
+}
+
+
+export default config 

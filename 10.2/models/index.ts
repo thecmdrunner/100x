@@ -3,7 +3,8 @@
 import { Sequelize, DataTypes } from "sequelize";
 import fs from "fs";
 import path from "path";
-import config from "../config/config";
+import config from "../config/config.mjs";
+
 const db: Record<string, any> = {};
 const basename = path.basename(__filename);
 
