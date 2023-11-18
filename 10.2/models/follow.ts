@@ -37,7 +37,7 @@ const FollowModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Follow",
-    }
+    },
   );
   return Follow;
 };

@@ -3,8 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, { DataTypes }) {
-    await queryInterface.createTable(
-      "Media", {
+    await queryInterface.createTable("Media", {
       id: {
         type: DataTypes.BIGINT,
         autoIncrement: true,
@@ -13,7 +12,7 @@ module.exports = {
       },
       index: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       postId: {
         type: DataTypes.BIGINT,
@@ -25,15 +24,14 @@ module.exports = {
       },
       mediaUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false
+        allowNull: false,
       },
       type: {
         type: DataTypes.ENUM,
         values: ["image", "video", "gif"],
         allowNull: false,
       },
-    }
-    );
+    });
   },
 
   async down(queryInterface, Sequelize) {

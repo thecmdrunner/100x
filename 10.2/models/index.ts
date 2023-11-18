@@ -12,7 +12,7 @@ let sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  config,
 );
 
 fs.readdirSync(__dirname)

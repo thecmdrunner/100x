@@ -9,12 +9,12 @@ const schema = require("./schema");
 const connectionString = process.env.DATABASE_URL;
 
 if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not defined");
+  throw new Error("DATABASE_URL environment variable is not defined");
 }
 
 const client = postgres(connectionString);
 const db = drizzle(client, {
-    schema,
+  schema,
 });
 
 // db.query.users.findFirst({
@@ -22,5 +22,5 @@ const db = drizzle(client, {
 // })
 
 module.exports = {
-    db,
+  db,
 };

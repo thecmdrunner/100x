@@ -57,7 +57,7 @@ const PostModel = (sequelize: Sequelize, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Post",
-    }
+    },
   );
   return Post;
 };

@@ -39,7 +39,7 @@ const LikeModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Like",
-    }
+    },
   );
   return Like;
 };

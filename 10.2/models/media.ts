@@ -38,7 +38,7 @@ const MediaModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Media",
-    }
+    },
   );
   return Media;
 };
