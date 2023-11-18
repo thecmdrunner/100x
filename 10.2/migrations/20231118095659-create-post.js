@@ -1,11 +1,9 @@
 'use strict';
 
-const { TABLE_NAMES } = require('../models/constants.js')
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, { DataTypes }) {
-    await queryInterface.createTable(TABLE_NAMES.Post,
+    await queryInterface.createTable("Posts",
       {
         id: {
           type: DataTypes.BIGINT,
@@ -23,7 +21,7 @@ module.exports = {
           type: DataTypes.BIGINT,
           allowNull: true,
           references: {
-            model: TABLE_NAMES.Post,
+            model: "Posts",
             key: "id",
           },
         },
@@ -31,7 +29,7 @@ module.exports = {
           type: DataTypes.BIGINT,
           allowNull: false,
           references: {
-            model: TABLE_NAMES.User,
+            model: "Users",
             key: "id",
           },
         },
@@ -57,7 +55,7 @@ module.exports = {
      * Add reverting commands here.
      *
      * Example:
-     * await queryInterface.dropTable('users');
+     * await queryInterface.dropTable('Posts');
      */
   }
 };
