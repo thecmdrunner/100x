@@ -1,19 +1,9 @@
 "use strict";
 
-import user from "./user.cjs";
-
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-  class Follow extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
+import UserModel from "./user";
+import { Model } from "sequelize-typescript";
+const FollowModel = (sequelize: any, DataTypes: any): any => {
+  class Follow extends Model {}
   Follow.init(
     {
       id: {
@@ -26,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: user,
+          model: UserModel(sequelize, DataTypes),
           key: "id",
         },
       },
@@ -34,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: user,
+          model: UserModel(sequelize, DataTypes),
           key: "id",
         },
       },
@@ -47,7 +37,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Follow",
-    },
+    }
   );
   return Follow;
 };
+export default FollowModel;

@@ -1,22 +1,11 @@
 "use strict";
 
-// import post from "./post.cjs";
-// import user from "./user.cjs";
-const post = require("./post.cjs");
-const user = require("./user.cjs");
+import { Model } from "sequelize-typescript";
+import UserModel from "./user";
+import PostModel from "./post";
 
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-  class Like extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
+const LikeModel = (sequelize: any, DataTypes: any): any => {
+  class Like extends Model {}
   Like.init(
     {
       id: {
@@ -29,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: user,
+          model: UserModel(sequelize, DataTypes),
           key: "id",
         },
       },
@@ -37,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: post,
+          model: PostModel(sequelize, DataTypes),
           key: "id",
         },
       },
@@ -50,7 +39,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Like",
-    },
+    }
   );
   return Like;
 };
+export default LikeModel;

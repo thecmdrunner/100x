@@ -1,18 +1,10 @@
 "use strict";
 
-const User = require("./user.cjs");
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-  class Post extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
+import UserModel from "./user";
+import { Model } from "sequelize-typescript";
+
+const PostModel = (sequelize: any, DataTypes: any): any => {
+  class Post extends Model {}
   Post.init(
     {
       id: {
@@ -39,15 +31,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BIGINT,
         allowNull: false,
         references: {
-          model: User,
+          model: UserModel(sequelize, DataTypes),
           key: "id",
         },
       },
       content: {
-        type: DataTypes.STRING(280), allowNull: false
+        type: DataTypes.STRING(280),
+        allowNull: false,
       },
       postedAt: {
-        type: DataTypes.DATE, allowNull: true
+        type: DataTypes.DATE,
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -55,13 +49,15 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       deletedAt: {
-        type: DataTypes.DATE, allowNull: true
+        type: DataTypes.DATE,
+        allowNull: true,
       },
     },
     {
       sequelize,
       modelName: "Post",
-    },
+    }
   );
   return Post;
 };
+export default PostModel;

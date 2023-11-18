@@ -1,5 +1,5 @@
-import db from "./models/index.cjs";
-import user from "./models/user.cjs";
+import db from "./models/index";
+import user from "./models/user";
 import { DataTypes } from "sequelize";
 
 const User = user(db.sequelize, DataTypes);

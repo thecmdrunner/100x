@@ -1,17 +1,10 @@
 "use strict";
-const { Model } = require("sequelize");
-const post = require("./post");
-module.exports = (sequelize, DataTypes) => {
-  class Media extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
+
+import PostModel from "./post";
+import { Model } from "sequelize-typescript";
+
+const MediaModel = (sequelize: any, DataTypes: any): any => {
+  class Media extends Model {}
   Media.init(
     {
       id: {
@@ -22,19 +15,19 @@ module.exports = (sequelize, DataTypes) => {
       },
       index: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       postId: {
         type: DataTypes.BIGINT,
         allowNull: true,
         references: {
-          model: post,
+          model: PostModel(sequelize, DataTypes),
           key: "id",
         },
       },
       mediaUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false
+        allowNull: false,
       },
       type: {
         type: DataTypes.ENUM,
@@ -45,7 +38,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Media",
-    },
+    }
   );
   return Media;
 };
+export default MediaModel;
