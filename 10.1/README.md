@@ -3,7 +3,8 @@
 1. User (table name: users)
    id -- bigint serial primary key
    username -- string unique 50 chars max
-   imageUrl -- string 300 chars max
+   profileImage -- string 1024 chars max
+   profileBanner -- string 1024 chars max
    email - string
    emailVerifiedAt -- timestamp nullable
    name - string 50 chars max
