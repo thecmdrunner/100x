@@ -2,7 +2,9 @@
   "name": "100x",
   "module": "index.ts",
   "start": {
-    "introspect": "drizzle-kit introspect:pg"
+    "sequelize:migrate": "sequelize-cli db:migrate",
+    "drizzle:introspect": "drizzle-kit introspect:pg",
+    "postInstall": "npx prisma generate"
   },
   "devDependencies": {
     "bun-types": "latest",
