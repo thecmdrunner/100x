@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Follows {
+  id                               BigInt   @id @default(autoincrement())
+  followerId                       BigInt
+  followingId                      BigInt
+  timestamp                        DateTime @db.Timestamptz(6)
+  Users_Follows_followerIdToUsers  Users    @relation("Follows_followerIdToUsers", fields: [followerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Users_Follows_followingIdToUsers Users    @relation("Follows_followingIdToUsers", fields: [followingId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Likes {
+  id        BigInt   @id @default(autoincrement())
+  userId    BigInt
+  postId    BigInt
+  timestamp DateTime @db.Timestamptz(6)
+  Posts     Posts    @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Users     Users    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Media {
+  id       BigInt          @id @default(autoincrement())
+  index    Int
+  postId   BigInt?
+  mediaUrl String          @db.VarChar(1024)
+  type     enum_Media_type
+  Posts    Posts?          @relation(fields: [postId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Posts {
+  id          BigInt          @id @default(autoincrement())
+  type        enum_Posts_type @default(post)
+  referenceId BigInt?
+  userId      BigInt
+  content     String          @db.VarChar(280)
+  postedAt    DateTime?       @db.Timestamptz(6)
+  createdAt   DateTime        @db.Timestamptz(6)
+  deletedAt   DateTime?       @db.Timestamptz(6)
+  Likes       Likes[]
+  Media       Media[]
+  Posts       Posts?          @relation("PostsToPosts", fields: [referenceId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  other_Posts Posts[]         @relation("PostsToPosts")
+  Users       Users           @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Users {
+  id                                 BigInt    @id @default(autoincrement())
+  name                               String    @db.VarChar(100)
+  username                           String    @unique @db.VarChar(30)
+  email                              String    @unique @db.VarChar(120)
+  emailVerifiedAt                    DateTime? @db.Timestamptz(6)
+  passwordHash                       String    @db.VarChar(512)
+  bio                                String    @db.VarChar(160)
+  location                           String?   @db.VarChar(30)
+  website                            String?   @db.VarChar(100)
+  createdAt                          DateTime  @db.Timestamptz(6)
+  updatedAt                          DateTime  @db.Timestamptz(6)
+  dateOfBirth                        DateTime  @db.Timestamptz(6)
+  profilePicture                     String    @db.VarChar(1024)
+  coverPicture                       String    @db.VarChar(1024)
+  isPublic                           Boolean   @default(false)
+  Follows_Follows_followerIdToUsers  Follows[] @relation("Follows_followerIdToUsers")
+  Follows_Follows_followingIdToUsers Follows[] @relation("Follows_followingIdToUsers")
+  Likes                              Likes[]
+  Posts                              Posts[]
+}
+
+enum enum_Media_type {
+  image
+  video
+  gif
+}
+
+enum enum_Posts_type {
+  post
+  repost
+  reply
+}
