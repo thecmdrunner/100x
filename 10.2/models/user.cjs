@@ -47,11 +47,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       location: {
         type: DataTypes.STRING(30),
-        allowNull: false,
+        allowNull: true,
       },
       website: {
-        type: DataTypes.STRING(50),
-        allowNull: false,
+        type: DataTypes.STRING(100),
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -63,21 +63,28 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
-      updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
       dateOfBirth: {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      profilePicture: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      coverPicture: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      isPublic: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      }
     },
     {
       sequelize,
       modelName: "User",
-    }
+    },
   );
   return User;
 };
-
-

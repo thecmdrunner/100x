@@ -38,11 +38,16 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
+      timestamp: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
     },
     {
       sequelize,
       modelName: "Follow",
-    }
+    },
   );
   return Follow;
 };

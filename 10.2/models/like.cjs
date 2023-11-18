@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: DataTypes.BIGINT,
-        allowNull: false,
         autoIncrement: true,
+        allowNull: false,
         primaryKey: true,
       },
       userId: {
@@ -41,11 +41,16 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
+      timestamp: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
     },
     {
       sequelize,
       modelName: "Like",
-    }
+    },
   );
   return Like;
 };

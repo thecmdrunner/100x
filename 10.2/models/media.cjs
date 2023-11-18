@@ -16,9 +16,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: DataTypes.BIGINT,
-        allowNull: false,
         autoIncrement: true,
+        allowNull: false,
         primaryKey: true,
+      },
+      index: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       postId: {
         type: DataTypes.BIGINT,
@@ -28,27 +32,20 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-
-      url: {
+      mediaUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
+        allowNull: false
       },
-
-      index: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-
       type: {
         type: DataTypes.ENUM,
-        allowNull: false,
         values: ["image", "video", "gif"],
+        allowNull: false,
       },
     },
     {
       sequelize,
       modelName: "Media",
-    }
+    },
   );
   return Media;
 };

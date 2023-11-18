@@ -17,12 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: DataTypes.BIGINT,
-        allowNull: false,
         autoIncrement: true,
+        allowNull: false,
         primaryKey: true,
       },
-      content: {
-        type: DataTypes.STRING(280),
+      type: {
+        type: DataTypes.ENUM,
+        values: ["post", "repost", "reply"],
+        defaultValue: "post",
         allowNull: false,
       },
       referenceId: {
@@ -41,31 +43,25 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-      type: {
-        type: DataTypes.ENUM,
-        allowNull: false,
-        values: ["post", "repost", "reply"],
-        defaultValue: "post",
-      },
-
-      createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW,
-      },
-      deletedAt: {
-        type: DataTypes.DATE,
-        allowNull: true,
+      content: {
+        type: DataTypes.STRING(280), allowNull: false
       },
       postedAt: {
+        type: DataTypes.DATE, allowNull: true
+      },
+      createdAt: {
         type: DataTypes.DATE,
-        allowNull: true,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
+      deletedAt: {
+        type: DataTypes.DATE, allowNull: true
       },
     },
     {
       sequelize,
       modelName: "Post",
-    }
+    },
   );
   return Post;
 };
