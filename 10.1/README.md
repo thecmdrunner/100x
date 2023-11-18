@@ -1,22 +1,29 @@
-100x Microblogging Schema Design
+# 100x Microblogging Schema Design
+
+## TODO: Sync constraints
+
+## Sync ranges and nullables
+
+## Add justifications...
 
 1. User (table name: users)
-   id -- bigint serial primary key
-   username -- string unique 50 chars max
-   profileImage -- string 1024 chars max
-   profileBanner -- string 1024 chars max
-   email - string
-   emailVerifiedAt -- timestamp nullable
-   name - string 50 chars max
-   deletedAt -- timestamp nullable
-   createdAt -- timestamp
-   updatedAt -- timestamp
-   location -- string 50 chars max
-   website -- string 50 chars max
-   bio -- text
-   dateOfBirth -- timestamp
-   isPublic -- boolean
-   passwordHash -- string 512 chars max
+
+- id -- bigint serial primary key
+- username -- string unique 50 chars max
+- profileImage -- string 1024 chars max
+- profileBanner -- string 1024 chars max
+- email - string
+- emailVerifiedAt -- timestamp nullable
+- name - string 50 chars max
+- deletedAt -- timestamp nullable
+- createdAt -- timestamp
+- updatedAt -- timestamp
+- location -- string 50 chars max
+- website -- string 50 chars max
+- bio -- text
+- dateOfBirth -- timestamp
+- isPublic -- boolean
+- passwordHash -- string 512 chars max
 
 2. Post (table name: posts)
    id -- bigint serial primary key
