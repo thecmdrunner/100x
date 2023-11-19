@@ -1,6 +1,6 @@
 "use strict";
 
-import { Model } from "sequelize-typescript";
+import { Model } from "sequelize";
 import UserModel from "./user";
 import PostModel from "./post";
 
@@ -38,8 +38,8 @@ const LikeModel = (sequelize: any, DataTypes: any): any => {
     },
     {
       sequelize,
-      modelName: "Like",
-    },
+      modelName: "Likes",
+    }
   );
   return Like;
 };

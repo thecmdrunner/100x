@@ -1,4 +1,5 @@
-const db = require("./models/index.js");
+import db from "./models";
+
 const test = async () => {
   try {
     await db.sequelize.authenticate();

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import db from "./models";
-import user from "./models/user";
+import db from "../models";
+import user from "../models/user";
 import { DataTypes } from "sequelize";
 
 const User = user(db.sequelize, DataTypes);
@@ -30,7 +30,7 @@ const newUser = await User.create(
     bio: "Nice.",
     location: "India",
     website: "https://pranava.dev",
-    dateOfBirth: new Date(),
+    dateOfBirth: new Date("2000-01-01"),
     profilePicture: "https://avatars.githubusercontent.com/u/38887390?v=4",
     coverPicture: "https://avatars.githubusercontent.com/u/38887390?v=4",
   })

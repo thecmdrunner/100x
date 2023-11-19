@@ -1,39 +1,35 @@
 "use strict";
 
-import { Sequelize, DataTypes } from "sequelize";
-import fs from "fs";
+import { Sequelize } from "sequelize";
+// import fs from "fs";
 import path from "path";
 import config from "../config/config.mjs";
 
 const db: Record<string, any> = {};
-const basename = path.basename(__filename);
+// const basename = path.basename(__filename);
 
-let sequelize = new Sequelize(
+const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config,
-);
-
-fs.readdirSync(__dirname)
-  .filter((file) => {
-    return (
-      file.indexOf(".") !== 0 &&
-      file !== basename &&
-      file.slice(-3) === ".js" &&
-      file.indexOf(".test.js") === -1
-    );
-  })
-  .forEach((file) => {
-    const model = require(path.join(__dirname, file))(sequelize, DataTypes);
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
+  {
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    dialect: "postgres",
+    logging: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+    define: {
+      timestamps: false,
+    },
   }
-});
+);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

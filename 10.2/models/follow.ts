@@ -1,7 +1,7 @@
 "use strict";
 
 import UserModel from "./user";
-import { Model } from "sequelize-typescript";
+import { Model } from "sequelize";
 const FollowModel = (sequelize: any, DataTypes: any): any => {
   class Follow extends Model {}
   Follow.init(
@@ -36,8 +36,8 @@ const FollowModel = (sequelize: any, DataTypes: any): any => {
     },
     {
       sequelize,
-      modelName: "Follow",
-    },
+      modelName: "Follows",
+    }
   );
   return Follow;
 };

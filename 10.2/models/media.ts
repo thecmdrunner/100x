@@ -1,7 +1,7 @@
 "use strict";
 
 import PostModel from "./post";
-import { Model } from "sequelize-typescript";
+import { Model } from "sequelize";
 
 const MediaModel = (sequelize: any, DataTypes: any): any => {
   class Media extends Model {}
@@ -38,7 +38,7 @@ const MediaModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Media",
-    },
+    }
   );
   return Media;
 };
