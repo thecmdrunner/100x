@@ -35,11 +35,21 @@ const LikeModel = (sequelize: any, DataTypes: any): any => {
         defaultValue: DataTypes.NOW,
         allowNull: false,
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
     },
     {
       sequelize,
       modelName: "Likes",
-    }
+    },
   );
   return Like;
 };

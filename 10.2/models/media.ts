@@ -34,11 +34,21 @@ const MediaModel = (sequelize: any, DataTypes: any): any => {
         values: ["image", "video", "gif"],
         allowNull: false,
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
     },
     {
       sequelize,
       modelName: "Media",
-    }
+    },
   );
   return Media;
 };

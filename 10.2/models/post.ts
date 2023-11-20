@@ -48,6 +48,11 @@ const PostModel = (sequelize: Sequelize, DataTypes: any): any => {
         defaultValue: DataTypes.NOW,
         allowNull: false,
       },
+      updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
+      },
       deletedAt: {
         type: DataTypes.DATE,
         allowNull: true,
@@ -56,7 +61,7 @@ const PostModel = (sequelize: Sequelize, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Posts",
-    }
+    },
   );
   return Post;
 };

@@ -77,7 +77,7 @@ const UserModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "User",
-    }
+    },
   );
   return User;
 };
