@@ -33,7 +33,7 @@ const newUser = await User.create(
     dateOfBirth: new Date("2000-01-01"),
     profilePicture: "https://avatars.githubusercontent.com/u/38887390?v=4",
     coverPicture: "https://avatars.githubusercontent.com/u/38887390?v=4",
-  })
+  }),
 );
 
 console.log("New User's auto-generated ID:", newUser.id);

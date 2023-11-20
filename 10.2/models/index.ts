@@ -1,11 +1,10 @@
 "use strict";
 
-import { Sequelize } from "sequelize";
+import { DataTypes, Sequelize } from "sequelize";
 // import fs from "fs";
 import path from "path";
 import config from "../config/config.mjs";
 
-const db: Record<string, any> = {};
 // const basename = path.basename(__filename);
 
 const sequelize = new Sequelize(
@@ -18,7 +17,7 @@ const sequelize = new Sequelize(
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: "postgres",
-    logging: false,
+    logging: console.log,
     pool: {
       max: 5,
       min: 0,
@@ -31,7 +30,14 @@ const sequelize = new Sequelize(
   }
 );
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+const db = {
+  sequelize: sequelize,
+  Sequelize: Sequelize,
+  User: (await import("./user")).default(sequelize, DataTypes),
+  Post: (await import("./post")).default(sequelize, DataTypes),
+  Media: (await import("./media")).default(sequelize, DataTypes),
+  Like: (await import("./like")).default(sequelize, DataTypes),
+  Follow: (await import("./follow")).default(sequelize, DataTypes),
+};
 
 export default db;

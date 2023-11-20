@@ -1,8 +1,11 @@
 "use strict";
 
 import UserModel from "./user";
-import { Model } from "sequelize";
-const FollowModel = (sequelize: any, DataTypes: any): any => {
+import { Model, Sequelize, type DataTypes as _DataTypes } from "sequelize";
+const FollowModel = (
+  sequelize: Sequelize,
+  DataTypes: typeof _DataTypes
+): any => {
   class Follow extends Model {}
   Follow.init(
     {
@@ -47,7 +50,7 @@ const FollowModel = (sequelize: any, DataTypes: any): any => {
     {
       sequelize,
       modelName: "Follows",
-    },
+    }
   );
   return Follow;
 };
